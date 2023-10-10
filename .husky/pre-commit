@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn lint-staged
+
+# Check the exit code of lint-staged
+if [ $? -ne 0 ]; then
+  echo "Error: ESLint found issues. Commit aborted."
+  exit 1
+fi

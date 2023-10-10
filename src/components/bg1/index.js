@@ -1,8 +1,8 @@
-import Field from "./field";
-import "./index.less";
+import Field from './field'
+import './index.less'
 const Install = (app, name) => {
-  app[name] = Field;
-  return app;
-};
+	app[name] = Field
+	return app
+}
 
-export default Install;
+export default Install
