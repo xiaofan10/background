@@ -49,6 +49,7 @@
 		"webpack-dev-server": "^4.15.1"
 	},
 	"dependencies": {
+		"echarts": "^5.4.3",
 		"simplex-noise": "3.x.x"
 	},
 	"lint-staged": {

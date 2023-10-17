@@ -58,7 +58,7 @@ const config = (input, output, plugins = []) => {
 }
 
 const configList = [
-	config(path.resolve('./src/index.js'), [
+	config(path.resolve('./src/components/chart/index.js'), [
 		// {
 		//   file: pkg.unpkg,
 		//   format: 'umd',
