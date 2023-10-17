@@ -17,5 +17,4 @@ document.body.appendChild(el)
 const chart = echarts.init(el)
 const color = THEMES['base'].color
 const opt = barOption(data, { color })
-console.log(opt)
 chart.setOption(opt)

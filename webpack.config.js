@@ -4,9 +4,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+import { VueLoaderPlugin } from 'vue-loader'
+
 export default {
 	entry: {
-		main: './src/example/index.js',
+		main: './src/main.js',
 	},
 	output: {
 		filename: 'background.js',
@@ -22,6 +24,10 @@ export default {
 	module: {
 		rules: [
 			{
+				test: /\.vue$/,
+				loader: 'vue-loader',
+			},
+			{
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: 'babel-loader',
@@ -30,7 +36,7 @@ export default {
 				},
 			},
 			{
-				test: /\.less$/,
+				test: /\.(css|less)$/,
 				use: [
 					'style-loader', // 将编译后的 CSS 添加到页面中的 style 标签
 					'css-loader', // 解析 CSS 文件
@@ -40,6 +46,7 @@ export default {
 		],
 	},
 	plugins: [
+		new VueLoaderPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 		}),
