@@ -7,14 +7,14 @@ import json from '@rollup/plugin-json'
 // 在node_模块中查找并绑定第三方依赖项（将第三方依赖打进包里）
 import resolve from '@rollup/plugin-node-resolve'
 // 将CommonJS模块转换为ES6
-import commonjs from '@rollup/plugin-commonjs'
+// import commonjs from '@rollup/plugin-commonjs'
 // rollup babel插件 兼容新特性
 import babel from 'rollup-plugin-babel'
 // 优化代码
 import { terser } from 'rollup-plugin-terser'
 // 热更新服务
 // import dts from 'rollup-plugin-dts';
-
+import postCss from 'rollup-plugin-postcss'
 import less from 'rollup-plugin-less'
 // import eslint from '@rollup/plugin-eslint'
 // 判断是是否为生产环境
@@ -25,22 +25,19 @@ const isPro = function () {
 // const SRC_DIR = './src';
 // const GIT_IGNORE = '.gitignore';
 // const extensions = ['.jsx', '.ts', '.tsx'];
+
 const config = (input, output, plugins = []) => {
 	return {
 		input,
 		output,
 		plugins: [
 			resolve(), //快速查找外部模块
-			commonjs(), //将CommonJS转换为ES6模块
+			// commonjs(), //将CommonJS转换为ES6模块
 			json(), //将json转换为ES6模块
-			less({
-				output: 'lib/style.css', // 生成的 CSS 文件路径
-			}),
-			//ts编译插件
-			// ts({
-			//   tsconfig: path.resolve(__dirname, './tsconfig.json'),
-			//   extensions,
+			// less({
+			// 	output: 'lib/style.css', // 生成的 CSS 文件路径
 			// }),
+			// postCss(),
 			babel({
 				runtimeHelpers: true,
 				exclude: ['node_modules/**', 'src/plugins/**.js'],
@@ -59,12 +56,6 @@ const config = (input, output, plugins = []) => {
 
 const configList = [
 	config(path.resolve('./src/components/chart/index.js'), [
-		// {
-		//   file: pkg.unpkg,
-		//   format: 'umd',
-		//   name: pkg.jsname,
-		//   sourcemap: true,
-		// },
 		{
 			file: './lib/index.esm.js',
 			format: 'esm',
@@ -76,27 +67,6 @@ const configList = [
 			sourcemap: true,
 		},
 	]),
-	// {
-	//   // 生成 .d.ts 类型声明文件
-	//   input: path.resolve('./src/index.ts'),
-	//   output: {
-	//     file: pkg.types,
-	//     format: 'es',
-	//   },
-	//   plugins: [
-	//     dts(),
-	//     // del({
-	//     //   targets: ['./lib/src'],
-	//     //   hook: 'buildEnd',
-	//     // }),
-	//     // {
-	//     //   name: 'move-dts',
-	//     //   buildEnd() {
-	//     //     // console.log('test');
-	//     //   },
-	//     // },
-	//   ],
-	// },
 ]
 
 // const files = shelljs.ls(`${SRC_DIR}/**/*.@(js|ts)`).filter((path) => typeof path === 'string');

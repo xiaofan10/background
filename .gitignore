@@ -2,3 +2,5 @@ node_modules
 vec4
 util
 field
+
+dist/

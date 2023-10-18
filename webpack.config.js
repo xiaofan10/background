@@ -1,6 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ESLintPlugin from 'eslint-webpack-plugin'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
@@ -18,7 +19,7 @@ export default {
 		minimize: false, // 禁用代码压缩
 	},
 	resolve: {
-		extensions: ['.js'], // 添加或修改需要解析的文件扩展名
+		extensions: ['.js', '.vue'], // 添加或修改需要解析的文件扩展名
 		fullySpecified: false, // 采用esm加载需要关闭它，不然必须直径文件扩展名
 	},
 	module: {
@@ -46,9 +47,16 @@ export default {
 		],
 	},
 	plugins: [
+		new ESLintPlugin({
+			extensions: ['.js', '.vue'],
+		}),
 		new VueLoaderPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 		}),
 	],
+	devServer: {
+		port: 9999, // 指定端口
+		hot: true, // 启用模块热替换 (HMR)
+	},
 }
