@@ -1709,6 +1709,14 @@
     "@vue/compiler-dom" "3.3.4"
     "@vue/shared" "3.3.4"
 
+"@vue/eslint-config-prettier@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@vue/eslint-config-prettier/-/eslint-config-prettier-8.0.0.tgz#de5cb77ed483b43683d17a788808a0fa4e7bd07e"
+  integrity sha512-55dPqtC4PM/yBjhAr+yEw6+7KzzdkBuLmnhBrDfp4I48+wy+Giqqj9yUr5T2uD/BkBROjjmqnLZmXRdOx/VtQg==
+  dependencies:
+    eslint-config-prettier "^8.8.0"
+    eslint-plugin-prettier "^5.0.0"
+
 "@vue/reactivity-transform@3.3.4":
   version "3.3.4"
   resolved "https://registry.npmmirror.com/@vue/reactivity-transform/-/reactivity-transform-3.3.4.tgz#52908476e34d6a65c6c21cd2722d41ed8ae51929"
@@ -2982,9 +2990,27 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.npmmirror.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-plugin-prettier@^5.0.1:
+eslint-config-prettier@^8.8.0:
+  version "8.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.10.0.tgz#3a06a662130807e2502fc3ff8b4143d8a0658e11"
+  integrity sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==
+
+eslint-config-prettier@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-9.0.0.tgz#eb25485946dd0c66cd216a46232dc05451518d1f"
+  integrity sha512-IcJsTkJae2S35pRsRAwoCE+925rJJStOdkKnLVgtE+tEpqU0EVVM7OqrwxqgptKdX29NUwC82I5pXsGFIgSevw==
+
+eslint-plugin-prettier@^5.0.0:
   version "5.0.1"
   resolved "https://registry.npmmirror.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.1.tgz#a3b399f04378f79f066379f544e42d6b73f11515"
+  integrity sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+    synckit "^0.8.5"
+
+eslint-plugin-prettier@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.1.tgz#a3b399f04378f79f066379f544e42d6b73f11515"
   integrity sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==
   dependencies:
     prettier-linter-helpers "^1.0.0"
@@ -6618,6 +6644,15 @@ yocto-queue@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
   integrity sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==
+
+zl-chart@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/zl-chart/-/zl-chart-1.0.0.tgz#d4cf02c515db03d28acc03482c206540fed09980"
+  integrity sha512-sMW19BZYexHoIHjGTifXnVv3CNnLQsgH9j9Q5orNr5k4ztXGAKb/j+T9Lpb5rT2P2/Xt3QHJzYh22SsVaNl72w==
+  dependencies:
+    echarts "^5.4.3"
+    eslint-plugin-prettier "^5.0.1"
+    simplex-noise "3.x.x"
 
 zrender@5.4.4:
   version "5.4.4"

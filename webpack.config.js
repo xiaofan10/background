@@ -9,7 +9,7 @@ import { VueLoaderPlugin } from 'vue-loader'
 
 export default {
 	entry: {
-		main: './src/main.js',
+		main: './src/example/main.js',
 	},
 	output: {
 		filename: 'background.js',
